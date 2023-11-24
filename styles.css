@@ -1,0 +1,38 @@
+body
+{
+    background-color: pink;
+    margin: 0;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.card
+{
+    border: 2px solid #333;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover
+{
+    transform: scale(1.05);
+}
+
+.card-content
+{
+    display: none;
+}
+
+.card.open .card-content
+{
+    display: block;
+} 
+
+.card.open .click-open
+{
+    display: none;
+} 
