@@ -11,10 +11,14 @@ body
 
 .card
 {
-    border: 2px solid #333;
+    /* border: 2px solid #333; */
+    background-color: #fff;
+    border-radius: 10px;
     padding: 20px;
     cursor: pointer;
+    overflow: hidden;
     transition: transform 0.3s ease-in-out;
+    width: 300px;
 }
 
 .card:hover
@@ -25,6 +29,40 @@ body
 .card-content
 {
     display: none;
+}
+
+.card-content img
+{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card-content p
+{
+    margin: 0;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    font-size: 18px;
+}
+
+.card-content p.typing 
+{
+    animation: typing 1.5s steps(20,end);
+}
+
+@keyframes typing 
+{
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+.click-open
+{
+    text-align: center;
+    color: #333;
 }
 
 .card.open .card-content

@@ -1,7 +1,41 @@
 
+var isAnimated = false;
+
 function OpenCard()
 {
     console.log('Clicked')
     var card = document.querySelector('.card');
+
+    if (isAnimated) {
+        return;
+    }
+
     card.classList.toggle('open');
+
+    if (card.classList.contains('open')) {
+        isAnimated = true;
+     }
+
+    if(card.classList.contains('open')) {
+        var content = "Content of Christmas card  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+
+        typingEffect(content, function() {
+            isAnimated = false;
+        });
+    }
+}
+
+function typingEffect(content, callback) {
+    var typingText = document.getElementById('typing-text');
+    typingText.textContent = "";
+
+    for (let i = 0; i <content.length; i++) {
+        setTimeout(function () {
+            typingText.textContent += content[i];
+
+            if(i === content.length - 1) {
+                callback();
+            }
+        }, i * 70);
+    }
 }
