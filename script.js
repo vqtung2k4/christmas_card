@@ -39,3 +39,31 @@ function typingEffect(content, callback) {
         }, i * 70);
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    var floatImages = document.querySelectorAll('.floating-image');
+    floatImages.forEach(function (image) {
+        var randomX = Math.random() * (window.innerWidth - image.width);
+        var randomY = Math.random() * (window.innerHeight - image.height);
+
+        image.style.left = randomX + 'px';
+        image.style.top = randomY + 'px';
+
+        var randomDuration = Math.random() * 5 + 2;
+        var randomDelay = Math.random() * 5;
+        var randomDirection = Math.random() < 0.5 ? 'normal' : 'reverse';
+
+        image.style.animationDuration = randomDuration + 's';
+        image.style.animationDelay = '-' + randomDelay + 's';
+        image.style.animationDirection = randomDirection;
+    });
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function () {
+        var preloader = document.querySelector('.preloader');
+        var content = document.querySelector('.content');
+
+        preloader.classList.add('hidden');
+    }, 3000);
+})

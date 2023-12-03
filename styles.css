@@ -1,12 +1,48 @@
 body
 {
-    background-color: pink;
+    background-color: #c5e3ed;
     margin: 0;
     height: 100vh;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+}
+
+.preloader
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: #c5e3ed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    z-index: 9999;
+}
+
+.preloader.hidden {
+    opacity: 0;
+}
+
+.spinner
+{
+    border: 4px solid #fff;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
 }
 
 .card
@@ -19,6 +55,7 @@ body
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     width: 300px;
+    z-index: 2;
 }
 
 .card:hover
@@ -74,3 +111,26 @@ body
 {
     display: none;
 } 
+
+.floating-image 
+{
+    position: fixed;
+    animation: floatAnimation infinite linear;
+    z-index: -1;
+}
+
+@keyframes floatAnimation {
+   0%, 100% {
+    transform: translate(0, 0);
+   }
+   25% {
+    transform: translate(20px, 20px);
+   }
+   50% {
+    transform: translate(40px, 0);
+   }
+   75% {
+    transform: translate(20px, -20px);
+   }
+}
+
