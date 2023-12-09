@@ -65,5 +65,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var content = document.querySelector('.content');
 
         preloader.classList.add('hidden');
+
+        //remove preloader after it hidden
+        preloader.addEventListener('transitionend', function () {
+            preloader.remove();
+        })
     }, 3000);
 })

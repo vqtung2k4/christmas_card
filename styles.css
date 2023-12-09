@@ -1,6 +1,7 @@
 body
 {
     background-color: #c5e3ed;
+    font-family: 'Roboto Condensed', sans-serif;
     margin: 0;
     height: 100vh;
     align-items: center;
@@ -23,7 +24,7 @@ body
     justify-content: center;
     opacity: 1;
     transition: opacity 1s ease-in-out;
-    z-index: 9999;
+    z-index: 2;
 }
 
 .preloader.hidden {
@@ -55,7 +56,11 @@ body
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     width: 300px;
-    z-index: 2;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .card:hover
@@ -71,6 +76,8 @@ body
 .card-content img
 {
     width: 100%;
+    /* max-width: 100%;
+    height: auto; */
     border-radius: 8px;
 }
 
@@ -98,8 +105,17 @@ body
 }
 .click-open
 {
-    text-align: center;
-    color: #333;
+    font-size: 3rem;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
 }
 
 .card.open .card-content
@@ -114,6 +130,8 @@ body
 
 .floating-image 
 {
+    max-width: 100px;
+    max-height: 100px;
     position: fixed;
     animation: floatAnimation infinite linear;
     z-index: -1;
