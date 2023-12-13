@@ -10,33 +10,44 @@
     <title>Christmas Card</title>
 </head>
 <body>
+    <audio id="bgMusic" autoplay>
+        Your browser not support play background music
+    </audio>
+
     <div class="preloader">
         <i class="fa-solid fa-heart-pulse heartbeat"></i>
     </div>
-    <audio id="bgMusic" autoplay loop>
-        <source src="./music/A playlist for when winter comes closer ❄️ winter vibes playlist ~ winter music (320 kbps).mp3" type="audio/mp3">
-        Your browser not support play background music
-    </audio>
+   
     <div class="content">
         <div class="card" onclick="OpenCard()">
             <i class="fa-solid fa-socks click-open"></i>
             <div class="card-content">
-                <img src="/img/floating_5.jpg" alt="Meo-content">
+                <img src="./img/img1.jpg" alt="Meo-content">
                 <!-- <p>Content of card</p> -->
                 <p id="typing-text"></p>
             </div>
         </div>
     
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068992198418603/floating_2.JPG?ex=6586fddc&is=657488dc&hm=e0aecc3bbaa080270284d980e2fc8a7e6da3b557a4fb43e576d577d7a2ba92ab&" alt="Floating Image 2" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068991850283098/float_1.JPG?ex=6586fddc&is=657488dc&hm=e8b66bf837a47bbc2215f36967d5dbc2becda4b64cccd0830830efb590d91ff1&" alt="Floating Image 1" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068992475250718/floating_3.JPG?ex=6586fddc&is=657488dc&hm=ec0bc4128b171fdd4da17c1b8c47684adb2dff6336b225aa7629d4706c0c834a&" alt="Floating Image 3" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068992911450163/floating_4.jpg?ex=6586fddc&is=657488dc&hm=ac224e2444b38006ad13c352c6f27f9b5964fd371da9bab6fcf162ce92f45104&" alt="Floating Image 4" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068993247002756/floating_5.jpg?ex=6586fddc&is=657488dc&hm=3d7a599a32ba3ec273c56b52186b802d4592c7111f1152756b5b2f64b0c6d5f2&" alt="Floating Image 5" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068993528004728/floating_6.jpg?ex=6586fddc&is=657488dc&hm=eff54538c87b44f632be5a4b62dda9e54ba2f65e787cae375a14c26130ee1b66&" alt="Floating Image 6" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1184518727069348030/image.png?ex=658c4407&is=6579cf07&hm=970e1cea19da06c33bbe9a1d3641e6ec883c8048578b9592a05719e9021ba688&" alt="Floating Image 3" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068991850283098/float_1.JPG?ex=6586fddc&is=657488dc&hm=e8b66bf837a47bbc2215f36967d5dbc2becda4b64cccd0830830efb590d91ff1&" alt="Floating Image 1" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068992911450163/floating_4.jpg?ex=6586fddc&is=657488dc&hm=ac224e2444b38006ad13c352c6f27f9b5964fd371da9bab6fcf162ce92f45104&" alt="Floating Image 4" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068993247002756/floating_5.jpg?ex=6586fddc&is=657488dc&hm=3d7a599a32ba3ec273c56b52186b802d4592c7111f1152756b5b2f64b0c6d5f2&" alt="Floating Image 5" class="floating-image">
         <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068991850283098/float_1.JPG?ex=6586fddc&is=657488dc&hm=e8b66bf837a47bbc2215f36967d5dbc2becda4b64cccd0830830efb590d91ff1&" alt="Floating Image 1" class="floating-image">
         <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068992198418603/floating_2.JPG?ex=6586fddc&is=657488dc&hm=e0aecc3bbaa080270284d980e2fc8a7e6da3b557a4fb43e576d577d7a2ba92ab&" alt="Floating Image 2" class="floating-image">
         <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068992475250718/floating_3.JPG?ex=6586fddc&is=657488dc&hm=ec0bc4128b171fdd4da17c1b8c47684adb2dff6336b225aa7629d4706c0c834a&" alt="Floating Image 3" class="floating-image">
         <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068992911450163/floating_4.jpg?ex=6586fddc&is=657488dc&hm=ac224e2444b38006ad13c352c6f27f9b5964fd371da9bab6fcf162ce92f45104&" alt="Floating Image 4" class="floating-image">
         <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068993247002756/floating_5.jpg?ex=6586fddc&is=657488dc&hm=3d7a599a32ba3ec273c56b52186b802d4592c7111f1152756b5b2f64b0c6d5f2&" alt="Floating Image 5" class="floating-image">
         <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068993528004728/floating_6.jpg?ex=6586fddc&is=657488dc&hm=eff54538c87b44f632be5a4b62dda9e54ba2f65e787cae375a14c26130ee1b66&" alt="Floating Image 6" class="floating-image">
-        <img src="https://placekitten.com/80/80" alt="Floating Image 3" class="floating-image">
-        <img src="https://placekitten.com/90/90" alt="Floating Image 4" class="floating-image">
-        <img src="https://placekitten.com/110/110" alt="Floating Image 5" class="floating-image">
-        <img src="https://placekitten.com/70/70" alt="Floating Image 6" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1184518727069348030/image.png?ex=658c4407&is=6579cf07&hm=970e1cea19da06c33bbe9a1d3641e6ec883c8048578b9592a05719e9021ba688&" alt="Floating Image 3" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068991850283098/float_1.JPG?ex=6586fddc&is=657488dc&hm=e8b66bf837a47bbc2215f36967d5dbc2becda4b64cccd0830830efb590d91ff1&" alt="Floating Image 1" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068992911450163/floating_4.jpg?ex=6586fddc&is=657488dc&hm=ac224e2444b38006ad13c352c6f27f9b5964fd371da9bab6fcf162ce92f45104&" alt="Floating Image 4" class="floating-image">
+        <img src="https://cdn.discordapp.com/attachments/1183068841912311918/1183068993247002756/floating_5.jpg?ex=6586fddc&is=657488dc&hm=3d7a599a32ba3ec273c56b52186b802d4592c7111f1152756b5b2f64b0c6d5f2&" alt="Floating Image 5" class="floating-image">
     </div>
 
     <script src="script.js"></script>

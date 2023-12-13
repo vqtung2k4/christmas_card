@@ -72,3 +72,20 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }, 3000);
 })
+
+
+const songs = [
+   './music/BGMusic/1.mp3',
+   './music/BGMusic/2.mp3',
+   './music/BGMusic/3.mp3',
+];
+
+function getRandomSong() {
+    const randomIndex = Math.floor(Math.random() * songs.length);
+    return songs[randomIndex];
+}
+document.addEventListener('DOMContentLoaded', function () {
+    var audio = document.getElementById('bgMusic');
+
+    audio.src = getRandomSong();
+});
