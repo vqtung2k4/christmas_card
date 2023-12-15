@@ -87,36 +87,33 @@ function getRandomSong() {
 document.addEventListener('DOMContentLoaded', function () {
     var audio = document.getElementById('bgMusic');
 
-    // Check if Audio supported
-    if(window.AudioContext || window.webkitAudioContext) {
-        var context = new (window.AudioContext || window.webkitAudioContext) ();
+    var soundPermission = localStorage.getItem('soundPermission');
 
-        var buffer = context.createBuffer(1, 1, 22050);
-        var source = context.createBufferSource();
-        source.buffer = buffer;
-        source.connect(context.destination);
-        source.start(0);
-
-        // if sound allowed
-        if(context.state == 'running') {
-            // sound is allowed
-            audio.src = getRandomSong();
-        } else {
-            // sound not allowed, create button
-            var allowSoundButton = document.createElement('button');
-            allowSoundButton.textContent = 'Allow Sound';
-            allowSoundButton.addEventListener('click', function () {
-                //start audio
-                context.resume().then(function () {
-                    audio.src = getRandomSong();
-                });
-                //remove button after allowed
-                allowSoundButton.remove();
-            }) ;
-            // append buttion to the body
-            document.body.appendChild(allowSoundButton);
-        }
-    } else {
+    function playBGM() {
         audio.src = getRandomSong();
+        audio.play();
     }
+
+    if(soundPermission == 'allowed') {
+        // sound is allowed
+        playBGM();
+    } else {
+        // sound not allowed => create button
+        var allowSoundButton = document.createElement('button');
+        allowSoundButton.textContent = "Allow Sound";
+        allowSoundButton.addEventListener('click', function () {
+            localStorage.setItem('soundPermission', 'allowed');
+
+            playBGM();
+
+            allowSoundButton.remove();
+        });
+        document.body.appendChild(allowSoundButton);
+    }
+
+    document.addEventListener('click', function () {
+        if(audio.pause && soundPermission == 'allowed') {
+            audio.play();
+        }
+    });
 });
