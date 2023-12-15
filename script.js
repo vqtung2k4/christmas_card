@@ -87,5 +87,36 @@ function getRandomSong() {
 document.addEventListener('DOMContentLoaded', function () {
     var audio = document.getElementById('bgMusic');
 
-    audio.src = getRandomSong();
+    // Check if Audio supported
+    if(window.AudioContext || window.webkitAudioContext) {
+        var context = new (window.AudioContext || window.webkitAudioContext) ();
+
+        var buffer = context.createBuffer(1, 1, 22050);
+        var source = context.createBufferSource();
+        source.buffer = buffer;
+        source.connect(context.destination);
+        source.start(0);
+
+        // if sound allowed
+        if(context.state == 'running') {
+            // sound is allowed
+            audio.src = getRandomSong();
+        } else {
+            // sound not allowed, create button
+            var allowSoundButton = document.createElement('button');
+            allowSoundButton.textContent = 'Allow Sound';
+            allowSoundButton.addEventListener('click', function () {
+                //start audio
+                context.resume().then(function () {
+                    audio.src = getRandomSong();
+                });
+                //remove button after allowed
+                allowSoundButton.remove();
+            }) ;
+            // append buttion to the body
+            document.body.appendChild(allowSoundButton);
+        }
+    } else {
+        audio.src = getRandomSong();
+    }
 });
