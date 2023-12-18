@@ -17,7 +17,7 @@ function OpenCard()
      }
 
     if(card.classList.contains('open')) {
-        var content = "Hellu Zyzy!<br>Vậy là đã đến Giáng Sinh rùi, không biết ngày này cậu có mong sẽ được đi chơi cùng với anh ni đẹp trai hay không mà từ sáng đến giờ ông già Noel cứ cố bắt tớ đi nè!";
+        var content = "Hellu Zyzy!<br>Vậy là đã đến Giáng Sinh rùi, không biết ngày này cậu có mong sẽ được đi chơi cùng với anh ni đẹp trai hay không mà từ sáng đến giờ ông già Noel cứ cố bắt tớ đi nè🤣<br>Tớ cũng không biết nói gì nữa nhưng mà chúc cậu có một mùa Giáng Sinh thật ấm áp bên những người mà cậu yêu thương nha! Cảm ơn cậu vì đã đọc😊";
 
         typingEffect(content, function() {
             isAnimated = false;
@@ -27,7 +27,7 @@ function OpenCard()
 
 function typingEffect(content, callback) {
     var typingText = document.getElementById('typing-text');
-    typingText.innerHTML = "";
+    typingText.innerHTML = ""; //clear existing content
 
     var words = content.split(' ');
     var wordIndex = 0;
@@ -42,16 +42,6 @@ function typingEffect(content, callback) {
         }
     }
     typeNextWord();
-
-    // for (let i = 0; i <content.length; i++) {
-    //     setTimeout(function () {
-    //         typingText.textContent += content[i];
-
-    //         if(i === content.length - 1) {
-    //             callback();
-    //         }
-    //     }, i * 70);
-    // }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -92,6 +82,7 @@ const songs = [
    './music/BGMusic/1.mp3',
    './music/BGMusic/2.mp3',
    './music/BGMusic/3.mp3',
+   './music/BGMusic/4.mp3',
 ];
 
 function getRandomSong() {
